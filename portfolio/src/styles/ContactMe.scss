@@ -1,0 +1,99 @@
+@import './variables';
+@import './_mixins';
+
+.contact-me {
+    padding: 20px;
+    background-color: $dark-color;
+    color: $live-color;
+    text-align: center;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        font-size: 2rem;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 600px;
+        margin: 0 auto;
+
+        .form-group {
+            width: 100%;
+            margin-bottom: 15px;
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid $neutral-color-1;
+                border-radius: 5px;
+                font-size: 1rem;
+            }
+
+            textarea {
+                resize: vertical;
+                min-height: 100px;
+            }
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: $live-color;
+            color: $light-color;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken($live-color, 10%);
+            }
+        }
+
+        .status {
+            margin-top: 15px;
+            font-size: 1rem;
+            color: $dark-color;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-me {
+        .contact-form {
+            padding: 0 10px;
+
+            .form-group {
+
+                input,
+                textarea {
+                    font-size: 0.9rem;
+                }
+            }
+
+            button {
+                padding: 8px 15px;
+            }
+
+            .status {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}

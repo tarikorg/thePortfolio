@@ -1,0 +1,60 @@
+@import './variables';
+@import './_mixins';
+
+.landing {
+    width: 100%;
+    height: 100vh;
+    background-color: $dark-color;
+    color: $live-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .landing-content {
+        text-align: center;
+
+        h1.welcome-text {
+            font-size: 2.5rem;
+            animation: fadeIn 3s ease-out;
+        }
+
+        h1.welcome-text2 {
+            font-size: 1.5rem;
+            animation: fadeIn 3s ease-out;
+        }
+
+        .learn-more {
+            display: inline-block;
+            margin-top: 20px;
+            color: $live-color;
+            cursor: pointer;
+            animation: jump 1s infinite;
+
+            &:hover {
+                color: lighten($live-color, 10%);
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes jump {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
